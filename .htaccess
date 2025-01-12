@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteRule ^(.*)/$ /$1 [L,R]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [QSA,L]
+
+Header add Content-Security-Policy "object-src 'none'; script-src 'self' 'unsafe-inline'"
+
+<FilesMatch "\.(jpg|jpeg|png|gif|swf|css|js|webp|ttf|svg)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>

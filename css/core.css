@@ -1,0 +1,395 @@
+/*#region ---Colours*/
+:root {
+    --black: #333;
+    --white: #fff;
+	--primary: #df8077;
+    --primary-hover: #f1a5a3;
+    --secondary: #8f5c56;
+    --secondary-hover: #f1a5a3;
+    --grey: #eee;
+    --dark-grey: #888;
+    --red: #c44;
+}
+/*#endregion*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input:not(type='file'):not([type='submit']) {
+    border: solid 1px var(--dark-grey);
+    border-radius: 0;
+    background: var(--white);
+}
+ul {
+    list-style-position: inside;
+ }
+select {
+    border: solid 1px var(--dark-grey);
+    border-radius: 0;
+    background: var(--white);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body {
+    font-size: 16px;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+button:hover, input[type='submit']:hover {
+    cursor: pointer;
+}
+.homelink {
+    font-size: 2em;
+    padding: 1em 0;
+    display:block;
+    text-decoration: none;
+    color: var(--white);
+}
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin:auto;
+    padding: 0 15px;
+}
+.primarybutton, .secondarybutton, .deletebutton {
+    display:inline-block;
+    border:none;
+    padding: 0.8em 1em;
+    margin: 0.4em 0;
+    font-size: 1em;
+    text-decoration: none;
+}
+.primarybutton {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.secondarybutton {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+.deletebutton {
+    background-color: var(--red);
+    color: var(--white);
+}
+header {
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--white);
+    margin-bottom: 20px;
+}
+header h1 {
+    padding: 1em 0;
+}
+nav ul {
+    list-style-type: none;
+    display:flex;
+}
+nav ul li {
+    display:inline-block;
+    width: 50%;
+}
+nav a {
+    display:block;
+    width: 100%;
+    padding: 1em;
+    background: none;
+    border:none;
+    color: var(--white);
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: var(--primary-hover);
+}
+
+.foldout {
+    margin-bottom: 10px;
+}
+.foldouttoggle {
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    border:none;
+    text-align: left;
+    padding: 1em 40px 1em 1em;
+    background-image: url("/images/closed.svg");
+    background-size: 20px auto;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+}
+.foldout.open .foldouttoggle {
+    background-image: url("/images/open.svg");
+}
+.foldoutcontent {
+    display:none;
+    padding-top: 0.4em;
+}
+.foldout.open .foldoutcontent {
+    display:block;
+}
+
+/*#addmealform*/
+.mealform label {
+    display:block;
+    width:100%;
+    margin-bottom: 0.4em;
+}
+.mealform input:not(input[type='submit']), .mealform textarea, .mealform select, .mealform .deleteingredient {
+    padding: 0.4em 0.8em;
+    font-size: 1em;
+}
+.mealform .deleteingredient {
+    width: 30px;
+    height:30px;
+    background-color: var(--white);
+    border: none;
+    background-image: url('/images/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% auto;
+}
+.mealform label input {
+    display:block;
+    width:100%;
+    max-width: 400px;
+    
+}
+.mealform label textarea {
+    display:block;
+    width:100%;
+}
+.mealform table {
+    width:100%;
+    border-collapse: collapse;
+}
+.mealform table input, .mealform table select {
+    width: 90%;
+}
+.mealform table tbody tr:first-child .deleteingredient {
+    display:none;
+}
+.ingredientrow td {
+    padding-top:10px;
+}
+.mealform .images .image {
+    max-width:20%;
+    max-height:150px;
+    padding: 5px;
+    border: solid 1px var(--grey);
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.mealform .images .image img {
+    margin: auto;
+    display:block;
+}
+.mealform .images .image .deleteimage {
+    position:absolute;
+    top:5px;
+    right:5px;
+    width: 30px;
+    height: 30px;
+    padding: 0.5em;
+    background-color: var(--white);
+    border: solid 1px var(--grey);
+    background-image: url('/images/cross.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% auto;
+}
+
+#innermeallist {
+    display:flex;
+    flex-wrap: wrap;
+    padding: 1em 0;
+}
+#innermeallist .meal {
+    width: 50%;
+    margin-bottom: 1em;
+    padding: 0 0.4em;
+}
+#innermeallist .meal .innermeal {
+    border: solid 1px var(--grey);
+}
+#innermeallist .meal .imagecontainer {
+    position:relative;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center center;
+}
+#innermeallist .meal .imagecontainer img {
+    max-height: 100%;
+}
+#innermeallist .meal .deletemeal, #innermeallist .meal .editmeal {
+    position:absolute;
+    top:0;
+    width:40px;
+    height: 40px;
+    background-color: var(--white);
+    border: solid 1px var(--grey);
+    background-position: center center;
+    background-size: 60% auto;
+    background-repeat: no-repeat;
+}
+#innermeallist .meal .editmeal {
+    left: 0;
+    background-image: url('/images/edit.svg');
+    background-size: 70% auto;
+}
+#innermeallist .meal .deletemeal {
+    right: 0;
+    background-image: url('/images/cross.svg');
+}
+#innermeallist .meal .openmeal {
+    display:block;
+    text-align: center;
+    text-decoration: none;
+    color: var(--black);
+    padding: 0.6em 0;
+    border-top: solid 1px var(--grey)
+}
+
+footer {
+    background: var(--primary);
+    margin-top: 20px;
+}
+footer > .container {
+    /*padding: 0 0 10px 0;*/
+    display:flex;
+}
+footer > .container > * {
+    width:50%;
+    text-align: center;
+    padding: 1em;
+    background: var(--primary);
+    border:none;
+    color: var(--white);
+    font-size: 1em;
+}
+footer > .container > *:hover {
+    background: var(--primary-hover);
+}
+
+#notifications {
+    position: fixed;
+    bottom:0;
+    left:50%;
+    transform: translateX(-50%);
+}
+.notification {
+    cursor: pointer;
+    user-select: none;
+    border: solid 1px var(--primary);
+    background: var(--white);
+    padding: 10px 20px;
+    margin-bottom: 0.5em;
+}
+
+.iconlink {
+    display:inline-block;
+    padding: 1em 0 1em 25px;
+    background-position: left center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: var(--black);
+}
+.iconlink.backlink {
+    background-image: url('/images/backarrow.png');
+}
+
+.xscroller {
+    display:flex;
+    max-width: 100%;
+    overflow:auto;
+}
+.xscroller > * {
+    flex-shrink: 0;
+}
+.mealimages img {
+    display:block;
+    max-height:60vh;
+    max-width:unset;
+}
+
+
+#openmeal h1 {
+    font-size: 2em;
+}
+#openmeal h4 {
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+#openmeal #recipe {
+    margin: 1em 0;
+}
+
+h1 {
+    margin: 1em;
+    text-align: center;
+    font-size: 2em;
+}
+#mealplan h2 {
+    margin: 1em;
+    text-align: center;
+}
+#mealplan p {
+    padding: 1em 0;
+}
+#mealplan .mealname {
+    text-align: center;
+}
+#mealplan .weeklabel, #mealplan .daylabel {
+    display:block;
+    padding: 1em 0.5em;
+}
+
+#mealplan .daylabel {
+    background: var(--primary);
+    color: var(--white);
+}
+#mealplan .dayplan {
+    display:flex;
+}
+#mealplan .mealtypeshowcase {
+    width: 25%;
+}
+#mealplan .mealshowcase {
+    
+}
+#mealplan .mealshowcase img {
+    max-height: 150px;
+}
+#mealplan .meallabel {
+    display:block;
+    padding: 1em 0.5em;
+    background: var(--secondary);
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+
+@media (min-width: 991px) {
+    #innermeallist .meal {
+        width: 25%;
+    }
+}
